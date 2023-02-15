@@ -1,11 +1,11 @@
 
 # Magnetism detection using Hall Effect sensor
 
-In this project, When I place a magnet close to the sensor, an LED lights up in order to inform us that it detected a magnetic field. The sensor that we are using is called a Hall Effect sensor, a sensor that it can detect the presence of a magnetic field.  
+In this project, when I place a magnet close to the sensor, an LED lights up in order to inform us that it detected a magnetic field. The sensor that we are using is called a Hall Effect sensor, a sensor that it can detect the presence of a magnetic field.  
 
 
 
-## Components required for making this project
+## Components Used
 
 
 1. Arduino Nano
@@ -25,25 +25,33 @@ In this project, When I place a magnet close to the sensor, an LED lights up in 
 ## Code 
 
 ```javascript
-/* embed */
+/*
+Author : Mohd Aman Ansari
+embed
+https://embed.org.in
+*/
 
-int hallSensorPin = 2;     
-int ledPin =  13;    
-int state = 0;          
+int hallSensorPin = 2;   //Pin 2 of controller(Arduino Nano 328p)
+int ledPin = 13;         //Pin 13 of controller(Arduino Nano 328p)
+int state = 0;
 
-void setup() {
-  pinMode(ledPin, OUTPUT);      
-  pinMode(hallSensorPin, INPUT);     
+void setup()
+{
+  pinMode(ledPin, OUTPUT);
+  pinMode(hallSensorPin, INPUT);
 }
 
-void loop(){
-  
+void loop()
+{
+
   state = digitalRead(hallSensorPin);
 
-  if (state == LOW) {        
-    digitalWrite(ledPin, HIGH);  
-  } 
-  else {
-    digitalWrite(ledPin, LOW); 
+  if (state == LOW)
+  {
+    digitalWrite(ledPin, HIGH);
+  }
+  else
+  {
+    digitalWrite(ledPin, LOW);
   }
 }
